@@ -1,0 +1,29 @@
+{% extends 'inicio/base.html' %}
+
+{% block title %}Acerca de{% endblock title %}
+{% block head%} <style>
+  /* Estilo para la imagen circular */
+  .profile-image {
+      border-radius: 50%;
+      max-width: 300px;
+      display: block;
+      margin: 0 auto;
+  }
+</style>
+{% endblock head %}
+
+{% block contenido %}
+
+<div class="container mt-5">
+  <div class="text-center">
+      <img src="/media/about/mifoto.jpg" alt="Mi Foto" class="profile-image">
+      <br>
+      <h3>Mi Historia</h3>
+      <p>¡Hola! Soy Esteban Alvarez Farhat.</p>
+      <p>Soy Ingeniero en Informática, recibido en la Universidad Nacional Santo Tomas de Aquino, en </p>
+      <p>la provincia de Tucumán. Estoy casado, esperado un hijo y juego al futbol en mis ratos libres,</p>
+      <p>Siempre me intereso la seguridad informática y la administracion IT.</p>
+  </div>
+</div>
+
+{% endblock contenido %}

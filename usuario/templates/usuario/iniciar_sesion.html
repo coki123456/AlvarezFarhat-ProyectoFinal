@@ -1,0 +1,33 @@
+
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+{% block title %}Pagina Inicio{% endblock title %}
+
+{% block head%} <style>
+  .Titulo{
+    text-align: center;
+      display: block;
+      margin: 0 auto;
+  }
+</style>
+{% endblock head %}
+
+
+{%block contenido%}
+<br>
+<br>
+<div class="card text-white bg-primary mb-3" style="max-width: 300px; margin: 0 auto;">
+  <div class="card-header">INICIO DE SESION </div>
+  <div class="card-body">
+    <p class="card-text">
+      <form method="post">
+        {% csrf_token %}
+        {{ form_login.as_p }}
+        <button type="submit">Iniciar Sesion</button>
+      </form>
+    </p>
+  </div>
+</div>
+
+{%endblock contenido%}

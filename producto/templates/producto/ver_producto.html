@@ -1,0 +1,64 @@
+
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+{% block title %}Pagina Inicio{% endblock title %}
+
+{% block head%} <style>
+  .Titulo{
+    text-align: center;
+      display: block;
+      margin: 0 auto;
+  }
+  nuevo{
+    text-align: left;
+      display: block;
+      margin: 0 auto;
+  }
+  .post {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-top: calc(8rem + 57px);
+    padding-bottom: 8rem;
+    background: no-repeat center center;
+    background-color: #6c757d;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+</style>
+{% endblock head %}
+
+
+{%block contenido%}
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">Nombre del Producto: {{ objeto.nombre|upper }}</h3>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+          <div class="card-body">
+              <p class="card-text">Cantidad: {{ objeto.cantidad }}</p>
+              <p class="card-text">Marca: {{ objeto.marca }}</p>
+              <p class="card-text">Proveedor: {{ objeto.proveedor }}</p>
+              <p class="card-text">Categoría: {{ objeto.categoria }}</p>
+              <p class="card-text">Descripcion: {{ objeto.descripcion }}</p>
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="card-body">
+              <img class="img-fluid mb-3" src="{{ objeto.imagen.url }}" alt="Imagen del producto" style="max-width: 300px;">
+              <br>
+          </div>
+      </div>
+      <a class="btn btn-primary" href="{% url 'listar_producto' %}">Volver</a>
+    </div>
+
+
+  </div>
+</div>
+
+
+{%endblock contenido%}

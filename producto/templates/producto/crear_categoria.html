@@ -1,0 +1,32 @@
+
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+{% block title %}Pagina Inicio{% endblock title %}
+
+{% block head%} <style>
+  .Titulo{
+    text-align: center;
+      display: block;
+      margin: 0 auto;
+  }
+</style>
+{% endblock head %}
+
+
+{%block contenido%}
+
+<div class="Titulo">
+<br/><br/>
+<h4>AQUI PODES CREAR UNA CATEGORIA NUEVA.</h4><br/>
+</div>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+
+
+
+{%endblock contenido%}

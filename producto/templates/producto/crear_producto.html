@@ -1,0 +1,44 @@
+
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+{% block title %}Pagina Inicio{% endblock title %}
+
+{% block head%} <style>
+  .Titulo{
+    text-align: center;
+      display: block;
+      margin: 0 auto;
+  }
+</style>
+{% endblock head %}
+
+
+{%block contenido%}
+
+<div class="Titulo">
+<br/><br/>
+<h3>AQUI PODES CREAR UN PRODUCTO NUEVO. </h3><br/>
+</div>
+<div class="container mt-5">
+  <div class="card border-primary mb-3">
+    <div class="card-header bg-primary text-white">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h4>Nombre:       {{ form.nombre }}</h4>
+        <h4>Cantidad:     {{ form.cantidad }}</h4>
+        <h4>Marca:        {{ form.marca }}</h4>
+        <h4>Proveedor:    {{ form.proveedor }}</h4>
+        <h4>Categoria:    {{ form.categoria }}  <a href="{% url 'crear_categoria' %}" class="btn btn-success">+</a> </h4>
+        <h4>Imagen:       {{ form.imagen }}</h4>
+        <h4>Descripcion:  {{ form.descripcion }}</h4>
+        <br> 
+        <br> 
+        <button type="submit" class="btn btn-secondary">Guardar</button>
+    </form>
+    
+  </div>
+  
+</div>
+</div>
+{%endblock contenido%}

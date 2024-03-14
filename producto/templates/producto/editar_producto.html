@@ -1,0 +1,33 @@
+
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+{% block title %}Pagina Inicio{% endblock title %}
+
+{% block head%} <style>
+  .Titulo{
+    text-align: center;
+      display: block;
+      margin: 0 auto;
+  }
+</style>
+{% endblock head %}
+
+
+{%block contenido%}
+
+
+<div class="card border-primary mb-3">
+  <div class="card-body">
+    <p class="card-text">
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+    </p>
+  </div>
+</div>
+
+
+{%endblock contenido%}

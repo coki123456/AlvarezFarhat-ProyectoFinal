@@ -1,0 +1,41 @@
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+{% block title %}Pagina Inicio{% endblock title %}
+
+{% block head%} <style>
+  .Titulo{
+    text-align: center;
+      display: block;
+      margin: 0 auto;
+  }
+</style>
+{% endblock head %}
+
+
+{%block contenido%}
+
+<br>
+<br>
+<div class="card text-white bg-primary mb-3" style="max-width: 400px; margin: 0 auto;">
+  <div class="card-header">CAMBIO DE CONTRASEÑA DEL USUARIO: {{ user.username}}  </div>
+  <div class="card-body">
+    <p class="card-text">
+      
+      <form method="post">
+        {% csrf_token %}
+        <h4>Contraseña actual:    {{ form.old_password }}</h4>
+        <h4>Contraseña nueva:     {{ form.new_password1 }}</h4>
+        <h4>Confirmar contraseña: {{ form.new_password2 }}</h4>
+        <button type="submit">Registrar</button>
+      </form>
+      
+    </p>
+  </div>
+</div>
+
+
+
+
+{%endblock contenido%}
+
