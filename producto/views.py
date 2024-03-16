@@ -9,6 +9,7 @@ class ProductoListView(ListView):
     template_name = 'producto/listar_producto.html'
     context_object_name = 'productos'
     paginate_by = 50
+    ordering = ['nombre']
     
 class ProductoCreateView(LoginRequiredMixin,CreateView):
     model = Producto
