@@ -28,40 +28,13 @@
       <div class="row p-3">
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            {% if form_editar_perfil.avatar %}
-            <div class="col-md-6">
-              <div class="card-body">
-                <img class="profile-image" src={{ form_editar_perfil.avatar.url }} alt="Avatar" style="max-width: 300px;">
-              </div>
-            </div>
-            {% else %}
-            <img class="profile-image" src='/media/avatares/en_blanco.jpg' alt="Sin avatar"/>
-            {% endif %}
           </div>
         </div>
         <div class="col-lg-4">
-          <form method="post" action="{% url 'editar_perfil' %}">
+          <form method="post" action="{% url 'editar_perfil' %}" enctype="multipart/form-data">
             {% csrf_token %}
-            <table class="table fst-italic">
-              <tbody>
-                <tr>
-                  <th scope="row">Email: </th><td>{{ form_editar_perfil.email }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Nombre: </th><td>{{ form_editar_perfil.nombre }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Apellido: </th><td>{{ form_editar_perfil.apellido }}</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="align-middle">Descripción: </th><td>{{ form_editar_perfil.descripcion }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Link</th> 
-                  <td> {% if form_editar_perfil.link %}<a href={{ form_editar_perfil.link }}>{{ form_editar_perfil.link }}</a>{% endif %}
-                  </td>
-                </tr>
-              </tbody>
+            <table class="table table-borderless col-md-5 fst-italic">
+              {{ form_editar_perfil.as_table }}
             </table>
             <button type="submit" class="btn btn-primary">Guardar</button>
           </form>
@@ -70,6 +43,4 @@
     </div>
   </section>
 </div>
-
-
 {%endblock contenido%}

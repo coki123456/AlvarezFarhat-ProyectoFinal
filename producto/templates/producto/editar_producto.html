@@ -7,9 +7,22 @@
 {% block head%} <style>
   .Titulo{
     text-align: center;
-      display: block;
-      margin: 0 auto;
-  }
+    display: block;
+    margin: 0 auto;
+}
+.form-container {
+    width: 60%;
+    align:center;
+}
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+campos {
+  align="center";
+}
 </style>
 {% endblock head %}
 
@@ -17,7 +30,7 @@
 {%block contenido%}
 
 
-<div class="card border-primary mb-3">
+{% comment %} <div class="card border-primary mb-3">
   <div class="card-body">
     <p class="card-text">
       <form method="post">
@@ -27,7 +40,54 @@
       </form>
     </p>
   </div>
+</div> {% endcomment %}
+
+<div class="container mt-5">
+  <div class="card border-primary mb-3" style="align-items: center;">
+      <div class="form-container m-1">
+        <div class="card-body">
+          <div class="Titulo"><h4>EDITAR PRODUCTO </h4></div>
+        </div>
+        <div class="card-header bg-primary text-white" >
+          <form class="form-field" method="post" enctype="multipart/form-data" style="align-items: center;">
+            {% csrf_token %}
+              <div class="form-row">
+                  <h4>Nombre:</h4>
+                  <div class="campos">{{ form.nombre }}</div>
+              </div>
+              <div class="form-row">
+                  <h4>Cantidad:</h4>
+                  <div class="campos">{{ form.cantidad }}</div>
+              </div>
+              <div class="form-row">
+                  <h4>Marca:</h4>
+                  <div class="campos">{{ form.marca }}</div>
+              </div>
+              <div class="form-row">
+                  <h4>Proveedor:</h4>
+                  <div class="campos">{{ form.proveedor }}</div>
+              </div>
+              <div class="form-row">
+                  <h4>Categoria:</h4>
+                  <div class="campos">{{ form.categoria }} <a href="{% url 'crear_categoria' %}" class="btn btn-success">+</a></div>
+              </div>
+              <div class="form-row">
+                  <h4>Imagen:</h4>
+                  <div class="campos">{{ form.imagen }}</div>
+              </div>
+              <div class="form-row">
+                  <h4>Descripcion:</h4>
+                  <div class="campos">{{ form.descripcion }}</div>
+              </div>
+              <button type="submit" class="btn btn-secondary">Guardar</button>
+          </form>
+          </div>
+        </div>
+        
+      </div>
+  </div>
 </div>
+
 
 
 {%endblock contenido%}

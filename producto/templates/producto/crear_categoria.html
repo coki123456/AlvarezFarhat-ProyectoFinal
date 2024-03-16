@@ -16,17 +16,23 @@
 
 {%block contenido%}
 
-<div class="Titulo">
-<br/><br/>
-<h4>AQUI PODES CREAR UNA CATEGORIA NUEVA.</h4><br/>
-</div>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </form>
-
-
+  <div class="container mt-1">
+    <div class="card border-primary mb-1" style="align-items: center;">
+      <div class="form-container m-1">
+        <div class="card-body">
+          <div class="Titulo">
+            <h4>NUEVA CATEGORIA</h4>
+          </div>
+          <div class="card-header bg-primary text-white">
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="btn btn-secondary">Guardar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {%endblock contenido%}

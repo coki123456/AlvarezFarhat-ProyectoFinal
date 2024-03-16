@@ -31,3 +31,8 @@ class FormularioEditarPerfil(forms.Form):
     descripcion = forms.CharField(max_length=200, required=False, widget=forms.Textarea())
     link        = forms.URLField(max_length=100, required=False, widget=forms.TextInput())
     avatar      = forms.ImageField(required=False, widget=forms.ClearableFileInput())
+    
+    class Meta:
+        model = User
+        fields = ['email', 'nombre', 'apellido', 'descripcion', 'link', 'avatar']
+        

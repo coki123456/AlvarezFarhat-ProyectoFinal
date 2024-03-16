@@ -6,8 +6,7 @@
 {% block head%} <style>
   .Titulo{
     text-align: center;
-      display: block;
-      margin: 0 auto;
+    display: block;
   }
 </style>
 {% endblock head %}
@@ -15,9 +14,14 @@
 
 {%block contenido%}
 
-<div class="Titulo">
-<br/><br/>
-<h3>BIENVENIDO AL SISTEMA DE STOCK PARA TU NEGOCIO. </h3><br/>
+<div class="container mt-5">
+  <div class="card border-primary mb-3">
+    <div class="card-body">
+      <div class="Titulo">
+        <h3>BIENVENIDOS AL SISTEMA DE STOCK </h3><br/>
+      </div>
+    </div>
+  </div>
 </div>
 
-{%endblock contenido%}
+  {%endblock contenido%}

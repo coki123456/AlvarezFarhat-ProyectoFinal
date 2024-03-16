@@ -10,13 +10,13 @@ class ProductoListView(ListView):
     context_object_name = 'productos'
     paginate_by = 50
     
-class ProductoCreateView(CreateView):
+class ProductoCreateView(LoginRequiredMixin,CreateView):
     model = Producto
     form_class = ProductoForm   
     template_name = 'producto/crear_producto.html'
     success_url = '/producto/'
     
-class CategoriaCreateView(CreateView):
+class CategoriaCreateView(LoginRequiredMixin, CreateView):
     model = Categoria
     form_class = CategoriaForm
     template_name = 'producto/crear_categoria.html'
