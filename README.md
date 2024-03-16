@@ -24,4 +24,6 @@ Para instalar y ejecutar este proyecto, necesitarás tener instalado Python y Dj
 ```bash
 git clone https://github.com/coki123456/AlvarezFarhat-ProyectoFinal.git
 cd AlvarezFarhat-ProyectoFinal
+python manage.py makemigrations
+python manage.py migrate
 python manage.py runserver
